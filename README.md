@@ -1,5 +1,5 @@
-[index.html.txt](https://github.com/user-attachments/files/26841682/index.html.txt)
-
+[index.html.txt](https://github.com/user-attachments/files/26841798/index.html.txt)
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
@@ -8,12 +8,37 @@
 
 <style>
 body {
+    margin: 0;
     font-family: 'Comic Sans MS', cursive;
-    background: linear-gradient(#f5f5f5, #ececec);
-    color: #333;
+    background: linear-gradient(#1a1a1a, #2c2c2c);
+    color: #f5f5f5;
     text-align: center;
-    padding: 20px;
     overflow-x: hidden;
+}
+
+/* tela inicial */
+#inicio {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#inicio button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    background: #6b5b95;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* conteúdo escondido */
+#conteudo {
+    display: none;
+    padding: 20px;
 }
 
 .container {
@@ -21,15 +46,11 @@ body {
     margin: auto;
 }
 
-h1 {
-    color: #6b5b95;
-}
-
 /* animação texto */
 .fade {
     opacity: 0;
     transform: translateY(20px);
-    animation: aparecer 1.5s forwards;
+    animation: aparecer 2s forwards;
 }
 
 @keyframes aparecer {
@@ -46,44 +67,12 @@ img {
     margin: 20px 0;
 }
 
-/* botão música */
-.botao-musica {
-    background: #6b5b95;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-/* botão final */
-button {
-    background: #aa6f73;
-    color: white;
-    border: none;
-    padding: 15px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-.hidden {
-    display: none;
-}
-
-.final {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #6b5b95;
-}
-
 /* corações */
 .heart {
     position: fixed;
     bottom: -10px;
     color: #ff6b81;
     animation: subir 6s linear infinite;
-    font-size: 20px;
 }
 
 @keyframes subir {
@@ -93,8 +82,28 @@ button {
 
 .contador {
     margin: 15px;
-    font-size: 16px;
-    color: #6b5b95;
+    color: #cdb4db;
+}
+
+/* botão final */
+.final-btn {
+    background: #aa6f73;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.final-msg {
+    margin-top: 20px;
+    color: #ffcad4;
+    font-size: 18px;
 }
 </style>
 
@@ -102,14 +111,19 @@ button {
 
 <body>
 
-<!-- música -->
+<!-- TELA INICIAL -->
+<div id="inicio">
+    <h1>Eu fiz isso pra você ❤️</h1>
+    <button onclick="entrar()">Entrar</button>
+</div>
+
+<!-- MÚSICA -->
 <audio id="musica" loop>
   <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
-<button class="botao-musica" onclick="tocarMusica(this)">
-Tocar música 🎵
-</button>
+<!-- CONTEÚDO -->
+<div id="conteudo">
 
 <div class="contador" id="contador"></div>
 
@@ -117,52 +131,52 @@ Tocar música 🎵
 
 <h1 class="fade">Para minha pandinha, minha princesa, Gabriela Alaide ❤️</h1>
 
-<p class="fade">Eu tentei escrever isso de várias formas…</p>
-<p class="fade">mas nenhuma parece suficiente pra você.</p>
+<p class="fade">Antes de você… eu não sabia como era amar alguém assim.</p>
+<p class="fade">Você chegou… e mudou tudo.</p>
 
 <p class="fade">Hoje você faz 18 anos…</p>
-<p class="fade">e eu só consigo pensar no quanto sou sortudo por ter você.</p>
+<p class="fade">e eu só consigo agradecer por você existir.</p>
 
 <p class="fade">E mês que vem… 1 ano de nós.</p>
 
 <p class="fade"><b>A maquiagem kkkkk</b></p>
-<p class="fade">Mesmo dando errado… virou uma das melhores memórias.</p>
 <img src="foto1.jpg">
 
 <p class="fade"><b>A viagem…</b></p>
-<p class="fade">Ali eu percebi que você era especial de verdade.</p>
 <img src="foto2.jpg">
 
 <p class="fade"><b>Seu sorriso…</b></p>
-<p class="fade">Ele muda tudo em mim.</p>
 <img src="foto3.jpg">
 
 <p class="fade"><b>A cara de nojo KKKKK</b></p>
 <img src="foto4.jpg">
 
 <p class="fade"><b>A primeira vez que te vi…</b></p>
-<p class="fade">Ali… tudo começou.</p>
 <img src="foto5.jpg">
 
-<p class="fade">Pandinha… você é minha pessoa.</p>
-<p class="fade">Minha paz. Meu lugar favorito.</p>
+<p class="fade">Você virou minha paz.</p>
+<p class="fade">Meu lugar favorito.</p>
 
-<p class="fade">Eu te amo. Hoje e sempre.</p>
+<p class="fade">E eu te escolheria… em todas as vidas.</p>
 
-<button onclick="mostrarMensagem()">Clique aqui 💖</button>
+<button class="final-btn" onclick="mostrarMensagem()">Clique aqui 💖</button>
 
-<div id="mensagemFinal" class="final hidden">
-    Você foi a melhor coisa que já aconteceu na minha vida.<br><br>
-    Eu escolheria você em todas as vidas.<br><br>
+<div id="final" class="final-msg hidden">
+    Você foi, é, e sempre será<br>
+    a melhor coisa da minha vida.<br><br>
     Feliz aniversário, minha princesa.<br>
     Eu te amo pra sempre. ❤️
 </div>
 
 </div>
+</div>
 
 <script>
-// música com fade
-function tocarMusica(btn){
+// entrar no site
+function entrar(){
+    document.getElementById("inicio").style.display = "none";
+    document.getElementById("conteudo").style.display = "block";
+
     let musica = document.getElementById("musica");
     musica.volume = 0;
     musica.play();
@@ -176,15 +190,12 @@ function tocarMusica(btn){
             clearInterval(fade);
         }
     }, 200);
-
-    btn.style.display = "none";
 }
 
-// contador (MUDA A DATA AQUI)
-let dataInicio = new Date("2025-05-06"); // <-- COLOCA A DATA QUE VOCÊS COMEÇARAM
+// contador
+let inicio = new Date("2025-05-06"); // ALTERA AQUI
 let hoje = new Date();
-let dias = Math.floor((hoje - dataInicio) / (1000 * 60 * 60 * 24));
-
+let dias = Math.floor((hoje - inicio) / (1000 * 60 * 60 * 24));
 document.getElementById("contador").innerText =
 "Estamos juntos há " + dias + " dias ❤️";
 
@@ -194,17 +205,14 @@ setInterval(() => {
     heart.className = "heart";
     heart.innerText = "❤️";
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (15 + Math.random() * 20) + "px";
     document.body.appendChild(heart);
 
-    setTimeout(() => {
-        heart.remove();
-    }, 6000);
-}, 500);
+    setTimeout(() => heart.remove(), 6000);
+}, 400);
 
-// botão final
+// mensagem final
 function mostrarMensagem(){
-    document.getElementById("mensagemFinal").classList.remove("hidden");
+    document.getElementById("final").classList.remove("hidden");
 }
 </script>
 
