@@ -1,4 +1,3 @@
-[index.html.txt](https://github.com/user-attachments/files/26841378/index.html.txt)
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,10 +8,11 @@
 <style>
 body {
     font-family: 'Comic Sans MS', cursive;
-    background: #f5f5f5;
+    background: linear-gradient(#f5f5f5, #ececec);
     color: #333;
     text-align: center;
     padding: 20px;
+    overflow-x: hidden;
 }
 
 .container {
@@ -24,7 +24,7 @@ h1 {
     color: #6b5b95;
 }
 
-/* animação */
+/* animação texto */
 .fade {
     opacity: 0;
     transform: translateY(20px);
@@ -53,7 +53,6 @@ img {
     padding: 12px 20px;
     border-radius: 20px;
     cursor: pointer;
-    margin-bottom: 20px;
 }
 
 /* botão final */
@@ -76,13 +75,33 @@ button {
     font-size: 18px;
     color: #6b5b95;
 }
+
+/* corações */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    color: #ff6b81;
+    animation: subir 6s linear infinite;
+    font-size: 20px;
+}
+
+@keyframes subir {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+.contador {
+    margin: 15px;
+    font-size: 16px;
+    color: #6b5b95;
+}
 </style>
 
 </head>
 
 <body>
 
-<!-- MÚSICA -->
+<!-- música -->
 <audio id="musica" loop>
   <source src="musica.mp3" type="audio/mpeg">
 </audio>
@@ -90,6 +109,8 @@ button {
 <button class="botao-musica" onclick="tocarMusica(this)">
 Tocar música 🎵
 </button>
+
+<div class="contador" id="contador"></div>
 
 <div class="container">
 
@@ -131,6 +152,7 @@ Tocar música 🎵
 
 <div id="mensagemFinal" class="final hidden">
     Você foi a melhor coisa que já aconteceu na minha vida.<br><br>
+    Eu escolheria você em todas as vidas.<br><br>
     Feliz aniversário, minha princesa.<br>
     Eu te amo pra sempre. ❤️
 </div>
@@ -138,11 +160,48 @@ Tocar música 🎵
 </div>
 
 <script>
+// música com fade
 function tocarMusica(btn){
-    document.getElementById("musica").play();
+    let musica = document.getElementById("musica");
+    musica.volume = 0;
+    musica.play();
+
+    let vol = 0;
+    let fade = setInterval(() => {
+        if(vol < 1){
+            vol += 0.05;
+            musica.volume = vol;
+        } else {
+            clearInterval(fade);
+        }
+    }, 200);
+
     btn.style.display = "none";
 }
 
+// contador (MUDA A DATA AQUI)
+let dataInicio = new Date("2025-05-01"); // <-- COLOCA A DATA QUE VOCÊS COMEÇARAM
+let hoje = new Date();
+let dias = Math.floor((hoje - dataInicio) / (1000 * 60 * 60 * 24));
+
+document.getElementById("contador").innerText =
+"Estamos juntos há " + dias + " dias ❤️";
+
+// corações
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerText = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}, 500);
+
+// botão final
 function mostrarMensagem(){
     document.getElementById("mensagemFinal").classList.remove("hidden");
 }
