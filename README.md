@@ -180,7 +180,7 @@ function tocarMusica(btn){
 }
 
 // contador (MUDA A DATA AQUI)
-let dataInicio = new Date("2025-05-01"); // <-- COLOCA A DATA QUE VOCÊS COMEÇARAM
+let dataInicio = new Date("2025-05-06"); // <-- COLOCA A DATA QUE VOCÊS COMEÇARAM
 let hoje = new Date();
 let dias = Math.floor((hoje - dataInicio) / (1000 * 60 * 60 * 24));
 
