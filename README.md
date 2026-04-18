@@ -1,5 +1,5 @@
-[index.html.txt](https://github.com/user-attachments/files/26848500/index.html.txt)
-<!DOCTYPE html>
+[index.html.txt](https://github.com/user-attachments/files/26848583/index.html.txt)
+
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
@@ -42,19 +42,6 @@ body {
 .container {
     max-width: 700px;
     margin: auto;
-}
-
-.fade {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: aparecer 2s forwards;
-}
-
-@keyframes aparecer {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* DIGITAÇÃO */
@@ -105,7 +92,7 @@ img {
     color: white;
 }
 
-/* FINAL CINEMA */
+/* PLOT FINAL */
 #plotFinal {
     position: fixed;
     top: 0;
@@ -141,112 +128,104 @@ img {
 
 <body>
 
+<!-- TELA INICIAL -->
 <div id="inicio">
     <h1>Eu fiz isso pra você ❤️</h1>
     <button onclick="entrar()">Entrar</button>
 </div>
 
+<!-- MUSICA -->
 <audio id="musica" loop>
   <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
 <div id="conteudo">
+
 <div class="contador" id="contador"></div>
 
 <div class="container">
 
-<h1 class="fade type" data-text="Para minha pandinha, minha princesa, Gabriela Alaide ❤️"></h1>
+<!-- TEXTOS INICIAIS -->
+<h1 class="type" data-text="Para minha pandinha, minha princesa, Gabriela Alaide ❤️"></h1>
 
-<p class="fade type" data-text="Eu tentei escrever isso de várias formas…"></p>
-<p class="fade type" data-text="mas nenhuma parece suficiente pra você."></p>
-<p class="fade type" data-text="Porque você não é algo simples de explicar…"></p>
-<p class="fade type" data-text="você é algo que se sente."></p>
+<p class="type" data-text="Eu tentei escrever isso de várias formas…"></p>
+<p class="type" data-text="mas nenhuma parece suficiente pra você."></p>
+<p class="type" data-text="Porque você não é algo simples de explicar…"></p>
+<p class="type" data-text="você é algo que se sente."></p>
 
-<p class="fade type" data-text="Hoje você faz 18 anos…"></p>
-<p class="fade type" data-text="e eu só consigo pensar no quanto sou sortudo por ter você."></p>
-<p class="fade type" data-text="E mês que vem… 1 ano de nós."></p>
+<p class="type" data-text="Hoje você faz 18 anos…"></p>
+<p class="type" data-text="e eu só consigo pensar no quanto sou sortudo por ter você."></p>
+<p class="type" data-text="E mês que vem… 1 ano de nós."></p>
 
-<!-- FOTO 1 -->
-<p class="fade"><b>A maquiagem kkkkk</b></p>
-<p class="fade">
-Eu nunca vou esquecer esse dia. Era pra ser algo simples… e virou um desastre completo kkkkk.<br><br>
-Mas o que ficou não foi a maquiagem dando errado… foi a gente rindo até não conseguir mais respirar.<br><br>
-E é isso que eu amo na gente.<br>
-Mesmo quando tudo dá errado… a gente transforma em um dos melhores momentos.<br><br>
-Se for pra viver uma vida inteira assim… eu quero isso pra sempre com você.
+<!-- BLOCO 1 -->
+<div class="bloco" style="display:none;">
+<p><b>A maquiagem kkkkk</b></p>
+<p>
+Eu nunca vou esquecer esse dia...<br><br>
+Era pra ser algo simples… e virou um desastre completo kkkkk.<br><br>
+Mas o que ficou foi a gente rindo sem parar.<br><br>
+E é isso que eu amo na gente.
 </p>
 <img src="foto1.jpg">
+</div>
 
-<!-- FOTO 2 -->
-<p class="fade"><b>A viagem…</b></p>
-<p class="fade">
-Essa semana pode parecer só uma viagem…<br>
-mas pra mim foi muito mais que isso.<br><br>
-Foi ali que eu comecei a perceber o quanto você era importante.<br>
-Foi ali que eu senti que não queria te perder.<br><br>
-Cada momento ali construiu algo que hoje eu tenho certeza:<br>
-eu quero você na minha vida.
+<!-- BLOCO 2 -->
+<div class="bloco" style="display:none;">
+<p><b>A viagem…</b></p>
+<p>
+Foi ali que eu percebi que você era especial de verdade.<br><br>
+Que eu queria você na minha vida.
 </p>
 <img src="foto2.jpg">
+</div>
 
-<!-- FOTO 3 -->
-<p class="fade"><b>Seu sorriso…</b></p>
-<p class="fade">
-Esse sorriso… é diferente.<br><br>
-É real. É leve. É você de verdade.<br><br>
-E você não faz ideia do quanto isso mexe comigo.<br>
-Porque quando você sorri assim… parece que tudo fica bem.<br><br>
-Se eu pudesse escolher uma coisa pra ver todos os dias…<br>
-seria você sorrindo assim.
+<!-- BLOCO 3 -->
+<div class="bloco" style="display:none;">
+<p><b>Seu sorriso…</b></p>
+<p>
+Esse sorriso muda tudo em mim.<br><br>
+Me acalma e me faz bem.
 </p>
 <img src="foto3.jpg">
+</div>
 
-<!-- FOTO 4 -->
-<p class="fade"><b>A cara de nojo KKKKK</b></p>
-<p class="fade">
-Eu até hoje dou risada disso.<br><br>
-Mas sabe o que é mais importante?<br>
-A gente é real.<br><br>
-A gente não precisa fingir nada.<br>
-E talvez seja exatamente isso que faz tudo ser tão especial.<br><br>
-Eu amo até suas caras de nojo.
+<!-- BLOCO 4 -->
+<div class="bloco" style="display:none;">
+<p><b>A cara de nojo KKKKK</b></p>
+<p>
+Até isso eu amo em você.<br><br>
+Porque é você sendo você.
 </p>
 <img src="foto4.jpg">
+</div>
 
-<!-- FOTO 5 -->
-<p class="fade"><b>A primeira vez que te vi…</b></p>
-<p class="fade">
-Essa aqui… foi o começo de tudo.<br><br>
-Talvez eu não tenha percebido na hora…<br>
-mas alguma coisa mudou dentro de mim.<br><br>
-Minha vida começou a tomar outro rumo.<br><br>
-E hoje eu sei qual era esse rumo:<br>
-você.<br><br>
-E foi a melhor coisa que já me aconteceu.
+<!-- BLOCO 5 -->
+<div class="bloco" style="display:none;">
+<p><b>A primeira vez que te vi…</b></p>
+<p>
+Ali tudo começou.<br><br>
+E foi a melhor coisa que me aconteceu.
 </p>
 <img src="foto5.jpg">
+</div>
 
-<p class="fade">Pandinha… você é minha paz.</p>
-<p class="fade">Minha pessoa.</p>
-<p class="fade">Meu lugar favorito no mundo.</p>
-
-<p class="fade">Eu te amo nos dias bons.</p>
-<p class="fade">Nos dias difíceis.</p>
-<p class="fade">Em todos os momentos.</p>
-
-<p class="fade">E eu escolheria você… sempre.</p>
+<p>Você virou minha paz.</p>
+<p>Meu lugar favorito.</p>
+<p>Eu te amo. Sempre.</p>
 
 <button class="final-btn" onclick="plotTwist()">Clique aqui 💖</button>
 
 </div>
 </div>
 
+<!-- FINAL -->
 <div id="plotFinal">
     <div id="plotTexto" class="plot-text"></div>
     <div id="nomeFinal" class="nome-final">Gabriela Alaide</div>
 </div>
 
 <script>
+// ENTRAR
 function entrar(){
     document.getElementById("inicio").style.display = "none";
     document.getElementById("conteudo").style.display = "block";
@@ -265,41 +244,66 @@ function entrar(){
         }
     }, 200);
 
-    iniciarDigitacao();
+    iniciarHistoria();
 }
 
-function escreverTexto(el, texto, velocidade=40){
-    let i = 0;
-    el.innerHTML = "";
-    el.classList.add("typewriter");
+// DIGITAÇÃO
+function escrever(el, texto, velocidade=35){
+    return new Promise(resolve => {
+        let i = 0;
+        el.innerHTML = "";
+        el.classList.add("typewriter");
 
-    function digitar(){
-        if(i < texto.length){
-            el.innerHTML += texto.charAt(i);
-            i++;
-            setTimeout(digitar, velocidade);
-        } else {
-            el.classList.remove("typewriter");
+        function digitar(){
+            if(i < texto.length){
+                el.innerHTML += texto.charAt(i);
+                i++;
+                setTimeout(digitar, velocidade);
+            } else {
+                el.classList.remove("typewriter");
+                resolve();
+            }
         }
-    }
-    digitar();
-}
-
-function iniciarDigitacao(){
-    let els = document.querySelectorAll(".type");
-    els.forEach((el, i) => {
-        setTimeout(() => {
-            escreverTexto(el, el.getAttribute("data-text"));
-        }, i * 1500);
+        digitar();
     });
 }
 
+// PAUSA
+function esperar(ms){
+    return new Promise(r => setTimeout(r, ms));
+}
+
+// HISTÓRIA
+async function iniciarHistoria(){
+    let textos = document.querySelectorAll(".type");
+
+    for(let el of textos){
+        await escrever(el, el.getAttribute("data-text"));
+        await esperar(600);
+    }
+
+    await esperar(1000);
+
+    let blocos = document.querySelectorAll(".bloco");
+
+    for(let bloco of blocos){
+        bloco.style.display = "block";
+        bloco.style.opacity = 0;
+        bloco.style.transition = "opacity 1.5s";
+        setTimeout(() => bloco.style.opacity = 1, 50);
+
+        await esperar(2500);
+    }
+}
+
+// CONTADOR
 let inicio = new Date("2025-05-06");
 let hoje = new Date();
 let dias = Math.floor((hoje - inicio) / (1000 * 60 * 60 * 24));
 document.getElementById("contador").innerText =
 "Estamos juntos há " + dias + " dias ❤️";
 
+// CORAÇÕES
 setInterval(() => {
     let h = document.createElement("div");
     h.className = "heart";
@@ -309,6 +313,7 @@ setInterval(() => {
     setTimeout(() => h.remove(), 6000);
 }, 400);
 
+// FINAL
 function plotTwist(){
     document.getElementById("plotFinal").style.display = "flex";
 
@@ -317,17 +322,13 @@ function plotTwist(){
 
 é porque sentiu tudo.
 
-Mas tem uma coisa que eu não falei ainda.
+Mas tem algo que eu ainda não falei.
 
-De todas as escolhas da minha vida...
-
-a melhor de todas
+A melhor escolha da minha vida
 foi escolher você.
 
-E se eu pudesse viver tudo de novo...
-
-eu escolheria você
-todas as vezes.
+E eu escolheria você
+em todas as vidas.
 
 Feliz aniversário, minha princesa.
 
