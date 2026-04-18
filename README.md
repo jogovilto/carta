@@ -1,5 +1,5 @@
-[index.html.txt](https://github.com/user-attachments/files/26841798/index.html.txt)
-
+[index.html.txt](https://github.com/user-attachments/files/26848453/index.html.txt)
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
@@ -16,7 +16,6 @@ body {
     overflow-x: hidden;
 }
 
-/* tela inicial */
 #inicio {
     height: 100vh;
     display: flex;
@@ -35,7 +34,6 @@ body {
     cursor: pointer;
 }
 
-/* conteúdo escondido */
 #conteudo {
     display: none;
     padding: 20px;
@@ -46,7 +44,7 @@ body {
     margin: auto;
 }
 
-/* animação texto */
+/* animação */
 .fade {
     opacity: 0;
     transform: translateY(20px);
@@ -58,6 +56,19 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* efeito digitando */
+.typewriter {
+    border-right: 2px solid #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
 }
 
 img {
@@ -85,7 +96,6 @@ img {
     color: #cdb4db;
 }
 
-/* botão final */
 .final-btn {
     background: #aa6f73;
     border: none;
@@ -96,14 +106,36 @@ img {
     color: white;
 }
 
-.hidden {
+/* PLOT FINAL */
+#plotFinal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    color: #fff;
     display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+    z-index: 999;
 }
 
-.final-msg {
-    margin-top: 20px;
+.plot-text {
+    font-size: 20px;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.nome-final {
+    margin-top: 40px;
+    font-size: 30px;
+    opacity: 0;
+    transition: opacity 2s ease;
     color: #ffcad4;
-    font-size: 18px;
 }
 </style>
 
@@ -129,50 +161,75 @@ img {
 
 <div class="container">
 
-<h1 class="fade">Para minha pandinha, minha princesa, Gabriela Alaide ❤️</h1>
+<h1 class="fade type" data-text="Para minha pandinha, minha princesa, Gabriela Alaide ❤️"></h1>
 
-<p class="fade">Antes de você… eu não sabia como era amar alguém assim.</p>
-<p class="fade">Você chegou… e mudou tudo.</p>
+<p class="fade type" data-text="Antes de você… eu não sabia como era amar alguém assim."></p>
+<p class="fade type" data-text="Você chegou… e mudou tudo."></p>
 
-<p class="fade">Hoje você faz 18 anos…</p>
-<p class="fade">e eu só consigo agradecer por você existir.</p>
+<p class="fade type" data-text="Hoje você faz 18 anos…"></p>
+<p class="fade type" data-text="e eu só consigo agradecer por você existir."></p>
 
-<p class="fade">E mês que vem… 1 ano de nós.</p>
+<p class="fade type" data-text="E mês que vem… 1 ano de nós."></p>
 
+<!-- FOTO 1 -->
 <p class="fade"><b>A maquiagem kkkkk</b></p>
+<p class="fade">
+Eu nunca vou esquecer esse dia...<br><br>
+Era pra ser algo simples, mas virou um caos completo kkkkk.<br><br>
+E mesmo assim… a gente riu até não aguentar mais.<br><br>
+E é isso que eu amo na gente.
+</p>
 <img src="foto1.jpg">
 
+<!-- FOTO 2 -->
 <p class="fade"><b>A viagem…</b></p>
+<p class="fade">
+Foi ali que tudo ficou mais forte.<br><br>
+Eu percebi que você era alguém que eu queria pra minha vida.
+</p>
 <img src="foto2.jpg">
 
+<!-- FOTO 3 -->
 <p class="fade"><b>Seu sorriso…</b></p>
+<p class="fade">
+Seu sorriso muda tudo em mim.<br><br>
+Me acalma. Me faz bem.
+</p>
 <img src="foto3.jpg">
 
+<!-- FOTO 4 -->
 <p class="fade"><b>A cara de nojo KKKKK</b></p>
+<p class="fade">
+Até isso eu amo em você.<br><br>
+Porque é você sendo você.
+</p>
 <img src="foto4.jpg">
 
+<!-- FOTO 5 -->
 <p class="fade"><b>A primeira vez que te vi…</b></p>
+<p class="fade">
+Ali… minha vida mudou.<br><br>
+E me levou até você.
+</p>
 <img src="foto5.jpg">
 
 <p class="fade">Você virou minha paz.</p>
 <p class="fade">Meu lugar favorito.</p>
-
 <p class="fade">E eu te escolheria… em todas as vidas.</p>
 
-<button class="final-btn" onclick="mostrarMensagem()">Clique aqui 💖</button>
-
-<div id="final" class="final-msg hidden">
-    Você foi, é, e sempre será<br>
-    a melhor coisa da minha vida.<br><br>
-    Feliz aniversário, minha princesa.<br>
-    Eu te amo pra sempre. ❤️
-</div>
+<button class="final-btn" onclick="plotTwist()">Clique aqui 💖</button>
 
 </div>
+</div>
+
+<!-- PLOT FINAL -->
+<div id="plotFinal">
+    <div id="plotTexto" class="plot-text"></div>
+    <div id="nomeFinal" class="nome-final">Gabriela Alaide</div>
 </div>
 
 <script>
-// entrar no site
+// ENTRAR
 function entrar(){
     document.getElementById("inicio").style.display = "none";
     document.getElementById("conteudo").style.display = "block";
@@ -190,29 +247,102 @@ function entrar(){
             clearInterval(fade);
         }
     }, 200);
+
+    iniciarDigitacao();
 }
 
-// contador
-let inicio = new Date("2025-05-06"); // ALTERA AQUI
+// DIGITAÇÃO
+function escreverTexto(el, texto, velocidade=40){
+    let i = 0;
+    el.innerHTML = "";
+    el.classList.add("typewriter");
+
+    function digitar(){
+        if(i < texto.length){
+            el.innerHTML += texto.charAt(i);
+            i++;
+            setTimeout(digitar, velocidade);
+        } else {
+            el.classList.remove("typewriter");
+        }
+    }
+    digitar();
+}
+
+function iniciarDigitacao(){
+    let els = document.querySelectorAll(".type");
+    els.forEach((el, i) => {
+        setTimeout(() => {
+            escreverTexto(el, el.getAttribute("data-text"));
+        }, i * 1500);
+    });
+}
+
+// CONTADOR
+let inicio = new Date("2025-05-06");
 let hoje = new Date();
 let dias = Math.floor((hoje - inicio) / (1000 * 60 * 60 * 24));
 document.getElementById("contador").innerText =
 "Estamos juntos há " + dias + " dias ❤️";
 
-// corações
+// CORAÇÕES
 setInterval(() => {
-    let heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerText = "❤️";
-    heart.style.left = Math.random() * 100 + "vw";
-    document.body.appendChild(heart);
-
-    setTimeout(() => heart.remove(), 6000);
+    let h = document.createElement("div");
+    h.className = "heart";
+    h.innerText = "❤️";
+    h.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 6000);
 }, 400);
 
-// mensagem final
-function mostrarMensagem(){
-    document.getElementById("final").classList.remove("hidden");
+// PLOT TWIST
+function plotTwist(){
+    document.getElementById("plotFinal").style.display = "flex";
+
+    let texto =
+`Se você chegou até aqui...
+
+é porque sentiu tudo.
+
+Mas tem uma coisa que eu não falei ainda.
+
+De todas as escolhas da minha vida...
+
+a melhor de todas
+foi escolher você.
+
+E se eu pudesse viver tudo de novo...
+
+eu escolheria você
+todas as vezes.
+
+Feliz aniversário, minha princesa.
+
+Eu te amo. Pra sempre. ❤️`;
+
+    escreverPlot(texto);
+}
+
+function escreverPlot(texto){
+    let el = document.getElementById("plotTexto");
+    let nome = document.getElementById("nomeFinal");
+    let i = 0;
+
+    el.innerHTML = "";
+    nome.style.opacity = 0;
+
+    function digitar(){
+        if(i < texto.length){
+            el.innerHTML += texto.charAt(i);
+            i++;
+            setTimeout(digitar, 40);
+        } else {
+            setTimeout(() => {
+                nome.style.opacity = 1;
+            }, 1500);
+        }
+    }
+    digitar();
 }
 </script>
 
