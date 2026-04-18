@@ -47,9 +47,8 @@ body {
 /* DIGITAÇÃO */
 .typewriter {
     border-right: 2px solid #fff;
-    white-space: nowrap;
-    overflow: hidden;
-    display: inline-block;
+    white-space: normal; /* permite quebrar linha */
+    display: inline;
     animation: blink 0.7s infinite;
 }
 @keyframes blink { 50% { border-color: transparent; } }
@@ -271,7 +270,15 @@ function escrever(el, texto, velocidade=35){
 
         function digitar(){
             if(i < texto.length){
-                el.innerHTML += texto.charAt(i);
+                let char = texto.charAt(i);
+
+                // mantém quebra de linha funcionando
+                if(char === "\n"){
+                    el.innerHTML += "<br>";
+                } else {
+                    el.innerHTML += char;
+                }
+
                 i++;
                 setTimeout(digitar, velocidade);
             } else {
