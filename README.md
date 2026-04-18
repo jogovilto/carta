@@ -1,5 +1,5 @@
-[index.html.txt](https://github.com/user-attachments/files/26848583/index.html.txt)
-
+[index.html.txt](https://github.com/user-attachments/files/26848611/index.html.txt)
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
@@ -52,10 +52,7 @@ body {
     display: inline-block;
     animation: blink 0.7s infinite;
 }
-
-@keyframes blink {
-    50% { border-color: transparent; }
-}
+@keyframes blink { 50% { border-color: transparent; } }
 
 img {
     width: 100%;
@@ -71,7 +68,6 @@ img {
     color: #ff6b81;
     animation: subir 6s linear infinite;
 }
-
 @keyframes subir {
     0% { transform: translateY(0); opacity: 1; }
     100% { transform: translateY(-100vh); opacity: 0; }
@@ -92,7 +88,7 @@ img {
     color: white;
 }
 
-/* PLOT FINAL */
+/* FINAL */
 #plotFinal {
     position: fixed;
     top: 0;
@@ -128,24 +124,22 @@ img {
 
 <body>
 
-<!-- TELA INICIAL -->
+<!-- INICIO -->
 <div id="inicio">
     <h1>Eu fiz isso pra você ❤️</h1>
     <button onclick="entrar()">Entrar</button>
 </div>
 
-<!-- MUSICA -->
 <audio id="musica" loop>
   <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
 <div id="conteudo">
-
 <div class="contador" id="contador"></div>
 
 <div class="container">
 
-<!-- TEXTOS INICIAIS -->
+<!-- INTRO -->
 <h1 class="type" data-text="Para minha pandinha, minha princesa, Gabriela Alaide ❤️"></h1>
 
 <p class="type" data-text="Eu tentei escrever isso de várias formas…"></p>
@@ -161,10 +155,15 @@ img {
 <div class="bloco" style="display:none;">
 <p><b>A maquiagem kkkkk</b></p>
 <p>
-Eu nunca vou esquecer esse dia...<br><br>
-Era pra ser algo simples… e virou um desastre completo kkkkk.<br><br>
-Mas o que ficou foi a gente rindo sem parar.<br><br>
-E é isso que eu amo na gente.
+Eu nunca vou esquecer esse dia…<br><br>
+Era pra ser algo simples… e acabou virando um caos completo kkkkk.<br><br>
+Sua maquiagem começou a descascar, seu sorriso travou… e mesmo assim…<br>
+a gente não conseguia parar de rir.<br><br>
+E é isso que ficou marcado pra mim.<br>
+Não foi o erro… foi a felicidade que veio junto.<br><br>
+Porque com você, até os momentos “errados” viram lembranças perfeitas.<br><br>
+Se for pra viver uma vida inteira assim…<br>
+eu quero isso pra sempre com você.
 </p>
 <img src="foto1.jpg">
 </div>
@@ -173,8 +172,12 @@ E é isso que eu amo na gente.
 <div class="bloco" style="display:none;">
 <p><b>A viagem…</b></p>
 <p>
-Foi ali que eu percebi que você era especial de verdade.<br><br>
-Que eu queria você na minha vida.
+Essa viagem pode ter sido só alguns dias…<br>
+mas pra mim significou muito mais do que parece.<br><br>
+Foi ali que aconteceram coisas que aproximaram a gente de um jeito diferente.<br><br>
+Cada conversa, cada momento, cada pequena “peripécia”…<br>
+foi construindo algo maior.<br><br>
+E sem eu perceber… você já estava se tornando alguém essencial pra mim.
 </p>
 <img src="foto2.jpg">
 </div>
@@ -183,8 +186,10 @@ Que eu queria você na minha vida.
 <div class="bloco" style="display:none;">
 <p><b>Seu sorriso…</b></p>
 <p>
-Esse sorriso muda tudo em mim.<br><br>
-Me acalma e me faz bem.
+Esse sorriso… é você de verdade.<br><br>
+E quando você sorri assim… parece que tudo fica mais leve.<br><br>
+Se eu pudesse escolher uma coisa pra guardar pra sempre…<br>
+seria você sorrindo assim.
 </p>
 <img src="foto3.jpg">
 </div>
@@ -193,8 +198,10 @@ Me acalma e me faz bem.
 <div class="bloco" style="display:none;">
 <p><b>A cara de nojo KKKKK</b></p>
 <p>
-Até isso eu amo em você.<br><br>
-Porque é você sendo você.
+Eu ainda dou risada disso kkkkk.<br><br>
+Mas isso mostra o quanto a gente é real.<br><br>
+Sem fingimento, sem filtro…<br>
+e é isso que faz tudo ser tão especial.
 </p>
 <img src="foto4.jpg">
 </div>
@@ -203,15 +210,23 @@ Porque é você sendo você.
 <div class="bloco" style="display:none;">
 <p><b>A primeira vez que te vi…</b></p>
 <p>
-Ali tudo começou.<br><br>
-E foi a melhor coisa que me aconteceu.
+Ali… alguma coisa mudou.<br><br>
+Minha vida começou a tomar outro rumo.<br><br>
+E hoje eu sei qual era esse rumo:<br>
+você.
 </p>
 <img src="foto5.jpg">
 </div>
 
 <p>Você virou minha paz.</p>
 <p>Meu lugar favorito.</p>
-<p>Eu te amo. Sempre.</p>
+<p>Minha pessoa.</p>
+
+<p>Eu te amo nos dias bons.</p>
+<p>Nos dias difíceis.</p>
+<p>Em todos os momentos.</p>
+
+<p>E eu escolheria você… sempre.</p>
 
 <button class="final-btn" onclick="plotTwist()">Clique aqui 💖</button>
 
@@ -268,7 +283,6 @@ function escrever(el, texto, velocidade=35){
     });
 }
 
-// PAUSA
 function esperar(ms){
     return new Promise(r => setTimeout(r, ms));
 }
@@ -292,7 +306,7 @@ async function iniciarHistoria(){
         bloco.style.transition = "opacity 1.5s";
         setTimeout(() => bloco.style.opacity = 1, 50);
 
-        await esperar(2500);
+        await esperar(3000);
     }
 }
 
@@ -322,10 +336,11 @@ function plotTwist(){
 
 é porque sentiu tudo.
 
-Mas tem algo que eu ainda não falei.
+Mas tem uma coisa que eu não falei ainda.
 
-A melhor escolha da minha vida
-foi escolher você.
+De todas as escolhas da minha vida...
+
+a melhor de todas foi você.
 
 E eu escolheria você
 em todas as vidas.
