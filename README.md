@@ -217,18 +217,19 @@ você.
 <img src="foto5.jpg">
 </div>
 
-<p>Você virou minha paz.</p>
-<p>Meu lugar favorito.</p>
-<p>Minha pessoa.</p>
+<div class="bloco" style="display:none;">
+    <p>Você virou minha paz.</p>
+    <p>Meu lugar favorito.</p>
+    <p>Minha pessoa.</p>
 
-<p>Eu te amo nos dias bons.</p>
-<p>Nos dias difíceis.</p>
-<p>Em todos os momentos.</p>
+    <p>Eu te amo nos dias bons.</p>
+    <p>Nos dias difíceis.</p>
+    <p>Em todos os momentos.</p>
 
-<p>E eu escolheria você… sempre.</p>
+    <p>E eu escolheria você… sempre.</p>
 
-<button class="final-btn" onclick="plotTwist()">Clique aqui 💖</button>
-
+    <button class="final-btn" onclick="plotTwist()">Clique aqui 💖</button>
+</div>
 </div>
 </div>
 
